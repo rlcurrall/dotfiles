@@ -1,0 +1,9 @@
+# Include Composer Binaries
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+# Include NPM Binaries
+export PATH="$HOME/.npm/bin:$PATH"
+
+# Include Custom Scripts
+export PATH="$HOME/.scripts:$PATH"
+

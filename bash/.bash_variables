@@ -1,0 +1,12 @@
+#==============================================================================#
+# Default Variables
+#==============================================================================#
+
+# Set path for vimrc file
+MYVIMRC=~/.vimrc
+
+# Set Composer variables
+COMPOSER_HOME=~/.composer
+COMPOSER_VENDOR_DIR=~/.composer/vendor
+COMPOSER_BIN_DIR=~/.composer/bin
+
