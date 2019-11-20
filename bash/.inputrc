@@ -1,0 +1,10 @@
+# Make Tab Completion Case Insensitive
+set completion-ignore-case on
+
+# Add Colored Stats for Tab Completion
+set colored-stats on
+
+# If Common Prefix >3 Characters Replace With Ellipsis
+# (i.e. with "screen" as the common prefix display "...shot_001.jpg ...shot_002.jpg")
+set completion-prefix-display-length 3
+
