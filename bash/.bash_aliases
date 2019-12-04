@@ -14,15 +14,18 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-# File listing aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CG'
-
 # Add an "alert" alias for long running commands.
 # Usage:
 #	sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+#==============================================================================#
+# File listing aliases
+#==============================================================================#
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CG'
+alias lf='ls -ld1 $PWD/{*,.*}'
 
 #==============================================================================#
 # Misc Aliases
@@ -45,4 +48,9 @@ alias nah="git reset --hard && git clean -df"
 alias gl="git log"
 alias glp="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+#==============================================================================#
+# Laravel Aliases
+#==============================================================================#
+alias tink="php artisan tinker"
 
