@@ -26,6 +26,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CG'
 alias lf='ls -ld1 $PWD/{*,.*}'
+alias lfd='ls -lrt -d -1 $PWD/**/{*,.*}'
+alias pm="stat -c '| %a | %U - %G | %n' *"
 
 #==============================================================================#
 # Misc Aliases
@@ -40,7 +42,8 @@ alias ga="git add"
 alias gaa="git add ."
 alias gs="git status"
 
-alias gc="git commit -m "
+alias gc="git commit"
+alias gcm="git commit -m "
 
 alias gundo="git reset --soft HEAD~"
 alias nah="git reset --hard && git clean -df"
