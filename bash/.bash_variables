@@ -10,3 +10,7 @@ export COMPOSER_HOME=~/.composer
 export COMPOSER_VENDOR_DIR=~/.composer/vendor
 export COMPOSER_BIN_DIR=~/.composer/bin
 
+# Set Editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
