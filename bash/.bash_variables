@@ -3,10 +3,10 @@
 #==============================================================================#
 
 # Set path for vimrc file
-MYVIMRC=~/.vimrc
+export MYVIMRC=~/.vimrc
 
 # Set Composer variables
-COMPOSER_HOME=~/.composer
-COMPOSER_VENDOR_DIR=~/.composer/vendor
-COMPOSER_BIN_DIR=~/.composer/bin
+export COMPOSER_HOME=~/.composer
+export COMPOSER_VENDOR_DIR=~/.composer/vendor
+export COMPOSER_BIN_DIR=~/.composer/bin
 
