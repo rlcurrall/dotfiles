@@ -9,6 +9,30 @@
 "=============================================================================="
 
 "=============================================================================="
+" Initialization
+"=============================================================================="
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'chiel92/vim-autoformat'
+
+call vundle#end()
+filetype plugin indent on
+
+"=============================================================================="
 " Appearance
 "=============================================================================="
 set colorcolumn=80,120
@@ -55,12 +79,20 @@ set foldmethod=indent
 "=============================================================================="
 
 " Add CtrlP plugin - Reference: http://ctrlpvim.github.io/ctrlp.vim/#installation
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Use Ripgrep if available
 if executable('rg')
     set grepprg=rg\ --color=never
     let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
     let g:ctrlp_use_caching = 0
+endif
+
+"=============================================================================="
+" Tmux compatibility
+"=============================================================================="
+if $TERM =~ 'screen'
+    nnoremap <C-A> <nop>
+    nnoremap <Leader><C-A> <C-a>
 endif
 
