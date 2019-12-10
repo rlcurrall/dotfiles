@@ -15,6 +15,7 @@ set nocompatible
 filetype off
 set encoding=UTF-8
 set number
+set autoread
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -49,12 +50,7 @@ filetype plugin indent on
 set colorcolumn=80,120
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
-" Color Scheme
-augroup MyColors
-    autocmd!
-    autocmd ColorScheme * highlight ColorColumn ctermbg=grey guibg=grey
-augroup END
-colorscheme elflord
+colorscheme dracula
 
 "=============================================================================="
 " Key Remaps
@@ -125,4 +121,8 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 
 let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
 let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+
+let g:syntastic_php_checkers = ['php', 'phpcbf', 'phpcs']
+let g:syntastic_php_phpcs_args='--standard=PSR12 -n'
+let g:syntastic_php_phpcfb_args='--standard=PSR12 -n'
 
