@@ -116,4 +116,5 @@ alias vim=nvim
 # Personal Paths
 #==============================================================================#
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.npm/bin:$PATH"
 
