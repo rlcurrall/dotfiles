@@ -1,7 +1,7 @@
 "=============================================================================="
 " Vim Configurations
 " Author: Robb Currall <rlcurrall@castlebranch.com>
-" Version: 19.11.18
+" Version: 19.12.10
 "
 " Some useful resources that I am utilizing to determine my configurations:
 "       - https://dougblack.io/words/a-good-vimrc.html#spaces
@@ -13,6 +13,8 @@
 "=============================================================================="
 set nocompatible
 filetype off
+set encoding=UTF-8
+set number
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -22,12 +24,21 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-fugitive'
 Plugin 'chiel92/vim-autoformat'
+Plugin 'cespare/vim-toml'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()
 filetype plugin indent on
@@ -78,9 +89,6 @@ set foldmethod=indent
 " Fuzzy Search with Ripgrep
 "=============================================================================="
 
-" Add CtrlP plugin - Reference: http://ctrlpvim.github.io/ctrlp.vim/#installation
-" set runtimepath^=~/.vim/bundle/ctrlp.vim
-
 " Use Ripgrep if available
 if executable('rg')
     set grepprg=rg\ --color=never
@@ -95,4 +103,26 @@ if $TERM =~ 'screen'
     nnoremap <C-A> <nop>
     nnoremap <Leader><C-A> <C-a>
 endif
+
+"=============================================================================="
+" NERD Settings
+"=============================================================================="
+
+" Automatically Open when opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+" Map Ctrl+n to toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" Close Vim if NERDTree is only window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Highlighting settings
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 
