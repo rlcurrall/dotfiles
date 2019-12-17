@@ -111,6 +111,7 @@ export EDITOR=nvim
 
 # Use nvim rather than vim
 alias vim=nvim
+alias robb=man
 
 #==============================================================================#
 # Personal Paths
