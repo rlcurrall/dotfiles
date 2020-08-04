@@ -16,12 +16,41 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git)
 
-source "$ZSH/oh-my-zsh.sh"
+source $ZSH/oh-my-zsh.sh
 
 #==============================================================================#
-# ZSH Variables & Aliases
+# User configuration
 #==============================================================================#
 
-export GPG_TTY=$(tty)
-export DENO_INSTALL="/Users/robb/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
+# Deno setup
+export DENO_DIR="$HOME/.deno"
+if [ -d $DENO_DIR ]
+  export PATH="$DENO_DIR/bin:$PATH"
+fi
+
+# Rust & Cargo setup
+export CARGO_DIR="$HOME/.cargo"
+if [ -d $CARGO_DIR ]
+  export PATH="$CARGO_DIR/bin:$PATH"
+fi
+
+# NVM setup
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+##
+# Load Aliases
+##
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
+fi
