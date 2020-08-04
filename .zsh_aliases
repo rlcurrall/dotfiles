@@ -5,3 +5,7 @@ alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 
 alias art="php artisan"
+
+function homestead() {
+    ( cd ~/Homestead && vagrant $* )
+}
