@@ -1,0 +1,60 @@
+[user]
+	name = Robb Currall
+	email = rlcurrall@gmail.com
+
+[core]
+	editor = vim
+	whitespace = fix,trailing-space
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	trustctime = false
+	precomposeunicode = false
+	untrackedCache = true
+
+[apply]
+	whitespace = fix
+
+[branch]
+	sort = -committerdate
+
+[web]
+	browser = google-chrome
+
+[color]
+	ui = auto
+	interactive = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red
+	new = green
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+# [commit]
+# 	gpgsign = true
+
+[diff]
+	renames = copies
+	tool = vimdiff
+
+[diff "bin"]
+	textconv = hexdump -v -C
+
+[help]
+	autocorrect = 1
+
+[merge]
+	log = true
+
+[init]
+	defaultBranch = main
