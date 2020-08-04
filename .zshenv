@@ -32,6 +32,7 @@ fi
 # Rust & Cargo setup
 CARGO_DIR="$HOME/.cargo"
 if [ -d $CARGO_DIR ]; then
+    # export PATH="$CARGO_DIR/bin:$PATH"
     source "$HOME/.cargo/env"
 fi
 
