@@ -19,38 +19,13 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 #==============================================================================#
-# User configuration
+# ZSH Aliases
 #==============================================================================#
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
 
-export VISUAL=vim
-export EDITOR="$VISUAL"
+alias art="php artisan"
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
-
-# Deno setup
-export DENO_DIR="/home/robb/.deno"
-if [ -d $DENO_DIR ]
-  export PATH="$DENO_DIR/bin:$PATH"
-fi
-
-# Rust & Cargo setup
-export CARGO_DIR="/home/robb/.cargo"
-if [ -d $CARGO_DIR ]
-  export PATH="$CARGO_DIR/bin:$PATH"
-fi
-
-# NVM setup
-export NVM_DIR="/home/robb/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-##
-# Load Aliases
-##
-if [ -f ~/.zsh_aliases ]; then
-    . ~/.zsh_aliases
-fi
+function homestead() {
+    ( cd ~/Homestead && vagrant $* )
+}
