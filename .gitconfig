@@ -6,21 +6,21 @@
 	pager = less -X -F
 	autocrlf = input
 	editor = vim
-	whitespace = fix,trailing-space
+	# whitespace = fix,trailing-space
 	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
-	trustctime = false
-	precomposeunicode = false
-	untrackedCache = true
+	# attributesfile = ~/.gitattributes
+	# trustctime = false
+	# precomposeunicode = false
+	# untrackedCache = true
 
-[apply]
-	whitespace = fix
+# [apply]
+# 	whitespace = fix
 
-[branch]
-	sort = -committerdate
+# [branch]
+# 	sort = -committerdate
 
-[web]
-	browser = google-chrome
+# [web]
+# 	browser = google-chrome
 
 [color]
 	ui = auto
@@ -48,18 +48,18 @@
 [fetch]
 	prune = true
 
-[diff]
-	renames = copies
-	tool = vimdiff
+# [diff]
+# 	renames = copies
+# 	tool = vimdiff
 
-[diff "bin"]
-	textconv = hexdump -v -C
+# [diff "bin"]
+# 	textconv = hexdump -v -C
 
-[help]
-	autocorrect = 1
+# [help]
+# 	autocorrect = 1
 
-[merge]
-	log = true
+# [merge]
+# 	log = true
 
-[init]
-	defaultBranch = main
+# [init]
+# 	defaultBranch = main
