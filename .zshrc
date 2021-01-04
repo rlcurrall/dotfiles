@@ -25,7 +25,13 @@ alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 
 alias art="php artisan"
+alias dcphp="docker-compose exec php ./bin/console"
+alias dcpwa="docker-compose exec pwa"
+alias smf="./bin/console"
 
 function homestead() {
     ( cd ~/Homestead && vagrant $* )
 }
+
+export PATH="$PATH:$HOME/.symfony/bin"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
