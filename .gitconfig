@@ -8,6 +8,7 @@
 	editor = vim
 	# whitespace = fix,trailing-space
 	excludesfile = ~/.gitignore
+	autocrlf = input
 	# attributesfile = ~/.gitattributes
 	# trustctime = false
 	# precomposeunicode = false
