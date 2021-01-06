@@ -15,13 +15,13 @@ fi
 # Deno setup
 export DENO_DIR="$HOME/.deno/bin"
 if [ -d $DENO_DIR ]; then
-  export PATH="$DENO_DIR:$PATH"
+  export PATH="$DENO_DIR:$PATH" || echo '';
 fi
 
 # Rust & Cargo setup
-export CARGO_DIR="$HOME/.cargo/bin"
+export CARGO_DIR="$HOME/.cargo"
 if [ -d $CARGO_DIR ]; then
-  export PATH="$CARGO_DIR:$PATH"
+    source "$HOME/.cargo/env"
 fi
 
 # Composer setup
