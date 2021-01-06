@@ -13,3 +13,5 @@ if [ -d "$HOME/.config/fusuma" ]; then
 fi
 mkdir "$HOME/.config/fusuma";
 ln -s "$DOTFILES/fusuma" "$HOME/.config/fusuma";
+
+ln -s "$DOTFILES/assets/fusuma.desktop" "$HOME/.config/autostart/";
