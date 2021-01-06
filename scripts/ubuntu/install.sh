@@ -13,3 +13,7 @@ if [ -d "$HOME/.config/nvim" ]; then
 fi
 mkdir "$HOME/.config/nvim";
 ln -s "$DOTFILES/.vimrc" "$HOME/.config/nvim/init.vim";
+
+# Update Gnome Gmail Icon
+sudo ln -s "$DOTFILES/assets/gmail_icon.png" /usr/share/pixmaps/gmail_icon.png;
+ln -s "$DOTFILES/assets/gnome-mail.desktop" "$HOME/.local/share/applications/gnome-gmail.desktop"
