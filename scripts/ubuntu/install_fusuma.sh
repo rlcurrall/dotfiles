@@ -14,4 +14,4 @@ fi
 mkdir "$HOME/.config/fusuma";
 ln -s "$DOTFILES/fusuma" "$HOME/.config/fusuma";
 
-ln -s "$DOTFILES/assets/fusuma.desktop" "$HOME/.config/autostart/";
+ln -s "$DOTFILES/assets/fusuma.desktop" "$HOME/.config/autostart/fusuma.desktop";
