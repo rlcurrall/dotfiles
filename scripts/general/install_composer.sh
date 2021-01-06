@@ -9,7 +9,7 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
 # Move to local bin folder
-mv "$DIR/composer.phar" "$HOME/.bin/composer";
+mv "$DOTFILES/composer.phar" "$HOME/.bin/composer";
 
 if hash composer 2>/dev/null; then
   composer global require tightenco/takeout;
