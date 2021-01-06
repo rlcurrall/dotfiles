@@ -13,15 +13,27 @@ else
 fi
 
 # Deno setup
-export DENO_DIR="/home/robb/.deno"
+export DENO_DIR="$HOME/.deno/bin"
 if [ -d $DENO_DIR ]; then
-  export PATH="$DENO_DIR/bin:$PATH"
+  export PATH="$DENO_DIR:$PATH"
 fi
 
 # Rust & Cargo setup
-export CARGO_DIR="/home/robb/.cargo"
+export CARGO_DIR="$HOME/.cargo/bin"
 if [ -d $CARGO_DIR ]; then
-  export PATH="$CARGO_DIR/bin:$PATH"
+  export PATH="$CARGO_DIR:$PATH"
+fi
+
+# Composer setup
+export COMPOSER_DIR="$HOME/.config/composer/vendor/bin"
+if [ -d $COMPOSER_DIR ]; then
+    export PATH="$COMPOSER_DIR:$PATH"
+fi
+
+# Symfony setup
+export SYMFONY_DIR="$HOME/.symfony/bin"
+if [ -d $SYMFONY_DIR ]; then
+    export PATH="$SYMFONY_DIR:$PATH"
 fi
 
 # NVM setup
