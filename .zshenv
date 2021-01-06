@@ -12,6 +12,11 @@ else
   export EDITOR='mvim'
 fi
 
+export USER_SCRIPTS="$HOME/.bin";
+if [ -d $USER_SCRIPTS ]; then
+  export PATH="$USER_SCRIPTS:$PATH";
+fi
+
 # Deno setup
 export DENO_DIR="$HOME/.deno/bin"
 if [ -d $DENO_DIR ]; then
