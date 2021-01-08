@@ -42,5 +42,9 @@ if [ -d $SYMFONY_DIR ]; then
 fi
 
 # NVM setup
-export NVM_DIR="/home/robb/.nvm"
+if [ "$(uname -s)" = "Darwin" ]; then
+    export NVM_DIR="/usr/local/opt/nvm";
+else
+    export NVM_DIR="$HOME/.nvm";
+fi
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

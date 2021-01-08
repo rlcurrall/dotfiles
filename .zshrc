@@ -3,7 +3,7 @@
 #==============================================================================#
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/robb/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
