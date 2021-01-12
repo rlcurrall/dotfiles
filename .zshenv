@@ -12,7 +12,7 @@ else
   export EDITOR='mvim'
 fi
 
-export USER_SCRIPTS="$HOME/.bin";
+USER_SCRIPTS="$HOME/.bin";
 if [ -d $USER_SCRIPTS ]; then
   export PATH="$USER_SCRIPTS:$PATH";
 fi
