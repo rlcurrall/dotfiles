@@ -16,14 +16,18 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 #==============================================================================#
 # ZSH Aliases
 #==============================================================================#
 alias art="php artisan"
 
-function homestead() {
+# Mac Specific Aliases & Functions
+if [ $(uname -s) = "Darwin" ]; then
+    source "$HOME/.dotfiles/os/mac.zsh";
+fi
+
+function homestead () {
     ( cd ~/Homestead && vagrant $* )
 }
-
