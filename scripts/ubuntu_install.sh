@@ -2,14 +2,14 @@
 
 DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && cd .. && pwd )";
 
-create_user_bin () {
+function create_user_bin () {
   if [ -d "$HOME/.bin" ]; then
     rm -rf "$HOME/.bin";
   fi
   mkdir "$HOME/.bin";
 }
 
-install_apt_misc () {
+function install_apt_misc () {
   sudo apt install -y \
     build-essential \
     curl \
@@ -18,7 +18,7 @@ install_apt_misc () {
     xclip;
 }
 
-install_desktop_apps () {
+function install_desktop_apps () {
   sudo snap install typora;
   sudo snap install gimp;
   sudo snap install spotify;
@@ -26,7 +26,7 @@ install_desktop_apps () {
   sudo snap install --classic phpstorm;
 }
 
-install_gnome_apps () {
+function install_gnome_apps () {
   sudo apt install -y \
     celluloid \
     gnome-calculator \
@@ -38,7 +38,7 @@ install_gnome_apps () {
     gnome-weather;
 }
 
-install_fusuma () {
+function install_fusuma () {
   # Install Dependencies
   sudo apt install -y \
     libinput-tools \
@@ -65,7 +65,7 @@ install_fusuma () {
   ln -s "$DOTFILES/ubuntu_desktop/fusuma.desktop" "$HOME/.config/autostart/fusuma.desktop";
 }
 
-install_docker () {
+function install_docker () {
   # Install Docker
   sudo apt install -y \
     docker \
@@ -79,7 +79,7 @@ install_docker () {
   sudo systemctl enable docker;
 }
 
-install_neovim () {
+function install_neovim () {
   # Install NeoVim
   sudo apt install -y neovim;
 
@@ -102,7 +102,7 @@ install_neovim () {
   nvim +PlugInstall +qall;
 }
 
-install_oh_my_zsh () {
+function install_oh_my_zsh () {
   # Install zsh
   sudo apt install -y zsh;
 
@@ -122,7 +122,7 @@ install_oh_my_zsh () {
   source "$HOME/.zprofile";
 }
 
-install_git () {
+function install_git () {
   # Install Git
   sudo apt install -y git;
 
@@ -135,7 +135,7 @@ install_git () {
   ln -s "$DOTFILES/.gitignore" "$HOME/.gitignore";
 }
 
-install_php () {
+function install_php () {
   # Install PHP & Extensions
   sudo apt install -y php \
     php-mbstring \
@@ -154,12 +154,12 @@ install_php () {
   mv "$DOTFILES/composer.phar" "$HOME/.bin/composer";
 }
 
-install_deno () {
+function install_deno () {
   # Install from web
   curl -fsSL https://deno.land/x/install/install.sh | bash;
 }
 
-install_node () {
+function install_node () {
   # Install from web
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash;
 
@@ -170,18 +170,19 @@ install_node () {
   nvm install 14;
 }
 
-install_rust () {
+function install_rust () {
   # Install from web
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y;
 
+  # Load Rust
+  source "$HOME/.cargo/env";
+
   # Install Cargo Packages
-  if hash cargo 2>/dev/null; then
-    cargo install bat;
-    cargo install ripgrep;
-  fi
+  cargo install bat;
+  cargo install ripgrep;
 }
 
-customize_desktop_files () {
+function customize_desktop_files () {
   # Update Gnome Gmail Icon
   sudo ln -s "$DOTFILES/assets/gmail_icon.png" /usr/share/pixmaps/gmail_icon.png;
   ln -s "$DOTFILES/ubuntu_desktop/gnome-gmail.desktop" "$HOME/.local/share/applications/gnome-gmail.desktop"
