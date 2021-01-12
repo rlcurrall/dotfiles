@@ -21,9 +21,6 @@ source $ZSH/oh-my-zsh.sh
 #==============================================================================#
 # ZSH Aliases
 #==============================================================================#
-alias zshconfig="code ~/.zshrc"
-alias ohmyzsh="code ~/.oh-my-zsh"
-
 alias art="php artisan"
 
 function homestead() {
