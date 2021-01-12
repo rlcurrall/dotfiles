@@ -12,39 +12,40 @@ else
   export EDITOR='mvim'
 fi
 
-export USER_SCRIPTS="$HOME/.bin";
+USER_SCRIPTS="$HOME/.bin";
 if [ -d $USER_SCRIPTS ]; then
   export PATH="$USER_SCRIPTS:$PATH";
 fi
 
 # Deno setup
-export DENO_DIR="$HOME/.deno/bin"
+DENO_DIR="$HOME/.deno/bin"
 if [ -d $DENO_DIR ]; then
-  export PATH="$DENO_DIR:$PATH" || echo '';
+  export PATH="$DENO_DIR:$PATH";
 fi
 
 # Rust & Cargo setup
-export CARGO_DIR="$HOME/.cargo"
+CARGO_DIR="$HOME/.cargo"
 if [ -d $CARGO_DIR ]; then
     source "$HOME/.cargo/env"
 fi
 
 # Composer setup
-export COMPOSER_DIR="$HOME/.config/composer/vendor/bin"
+export COMPOSER_HOME="$HOME/.composer"
+COMPOSER_DIR="$HOME/.composer/vendor/bin"
 if [ -d $COMPOSER_DIR ]; then
     export PATH="$COMPOSER_DIR:$PATH"
 fi
 
 # Symfony setup
-export SYMFONY_DIR="$HOME/.symfony/bin"
+SYMFONY_DIR="$HOME/.symfony/bin"
 if [ -d $SYMFONY_DIR ]; then
     export PATH="$SYMFONY_DIR:$PATH"
 fi
 
 # NVM setup
 if [ "$(uname -s)" = "Darwin" ]; then
-    export NVM_DIR="/usr/local/opt/nvm";
+    NVM_DIR="/usr/local/opt/nvm";
 else
-    export NVM_DIR="$HOME/.nvm";
+    NVM_DIR="$HOME/.nvm";
 fi
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
