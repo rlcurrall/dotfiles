@@ -6,7 +6,7 @@
 brew tap homebrew/cask-fonts;
 
 # Install Casks
-brew install --cask typort;
+brew install --cask typora;
 brew install --cask spotify;
 brew install --cask iterm2;
 brew install --cask discord;
@@ -17,7 +17,8 @@ brew install --cask font-fira-code;
 
 # Install Formulae
 brew install bash;
-brew insstall bash-completion2
+brew install bash-completion2
+brew install git;
 brew install nvim;
 brew install php;
 brew install composer;
@@ -26,3 +27,8 @@ brew install nvm;
 brew install bat;
 brew install ripgrep;
 
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;
+
+# Install Deno
+curl -fsSL https://deno.land/x/install/install.sh | sh;
