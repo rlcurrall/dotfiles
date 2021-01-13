@@ -21,13 +21,8 @@ source "$ZSH/oh-my-zsh.sh"
 #==============================================================================#
 # ZSH Aliases
 #==============================================================================#
-alias art="php artisan"
 
 # Mac Specific Aliases & Functions
 if [ $(uname -s) = "Darwin" ]; then
-    source "$HOME/.dotfiles/os/mac.zsh";
+    source "$HOME/.dotfiles/mac/custom.zsh";
 fi
-
-function homestead () {
-    ( cd ~/Homestead && vagrant $* )
-}
