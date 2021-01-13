@@ -1,5 +1,14 @@
 #!/bin/bash
 
+DOTFILES="$HOME/.dotfiles"
+installLocation="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && cd .. && pwd)"
+
+if [ ! "$DOTFILES" = "$installLocation" ]; then
+  printf "\e[0;31mERROR: Dotfiles not installed in the correct directory.
+    Expected: %s
+    Found in: %s\e[m\n" "$DOTFILES" "$installLocation"
+  return 1
+fi
 #==============================================================================#
 # Install Homebrew
 #==============================================================================#
