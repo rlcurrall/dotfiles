@@ -26,6 +26,8 @@ brew install --cask typora
 brew install --cask spotify
 brew install --cask iterm2
 brew install --cask discord
+brew install --cask visual-studio-code
+brew install --cask tableplus
 brew install --cask phpstorm
 brew install --cask google-chrome
 brew install --cask docker
