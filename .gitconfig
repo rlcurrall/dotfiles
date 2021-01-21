@@ -1,11 +1,11 @@
 [user]
 	name = Robb Currall
 	email = rlcurrall@gmail.com
+	signingkey = 73D02C5678B4D52A
 
 [core]
-	pager = less -X -F
-	autocrlf = input
 	editor = vim
+	pager = less -X -F
 	# whitespace = fix,trailing-space
 	excludesfile = ~/.gitignore
 	autocrlf = input
