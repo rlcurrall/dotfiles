@@ -1,7 +1,7 @@
 [user]
 	name = Robb Currall
 	email = rlcurrall@gmail.com
-	signingkey = 73D02C5678B4D52A
+	signingkey = 12405B4513213DB0
 
 [core]
 	editor = vim
@@ -64,3 +64,5 @@
 
 # [init]
 # 	defaultBranch = main
+[gpg]
+	program = gpg
