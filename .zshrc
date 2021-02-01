@@ -27,3 +27,19 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
+
+dcterm () {
+    if [ -z $1 ]; then
+        echo 'Must provide service name.'
+        return 1
+    fi
+
+    pod_id=$(docker-compose ps -q $1 2>/dev/null 1>&1)
+
+    if [ -z $pod_id ]; then
+        echo "No service with the name $1 was found."
+        return 1
+    fi
+
+    docker exec -it $pod_id export /bin/sh
+}
