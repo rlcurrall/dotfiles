@@ -37,3 +37,6 @@ function phvm() {
     brew link "php@${version}"
   fi
 }
+
+# Add Bash completion
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"

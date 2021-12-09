@@ -14,7 +14,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git)
+plugins=(git brew docker docker-compose)
 
 source "$ZSH/oh-my-zsh.sh"
 
@@ -43,3 +43,10 @@ dcterm () {
 
     docker exec -it $pod_id export /bin/sh
 }
+
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"

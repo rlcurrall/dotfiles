@@ -22,32 +22,38 @@ brew tap homebrew/cask-fonts
 #==============================================================================#
 # Install Casks
 #==============================================================================#
-brew install --cask typora
-brew install --cask spotify
-brew install --cask iterm2
-brew install --cask discord
-brew install --cask visual-studio-code
-brew install --cask tableplus
-brew install --cask phpstorm
-brew install --cask google-chrome
 brew install --cask docker
+brew install --cask discord
 brew install --cask font-fira-code
+brew install --cask google-chrome
+brew install --cask iterm2
+brew install --cask krita
+brew install --cask phpstorm
+brew install --cask postman
+brew install --cask spotify
+brew install --cask tableplus
+brew install --cask typora
+brew install --cask visual-studio-code
 
 #==============================================================================#
 # Install Formulae
 #==============================================================================#
 brew install bash
 brew install bash-completion2
+brew install bat
 brew install caddy
-brew install mkcert
-brew install git
-brew install nvim
-brew install php
 brew install composer
 brew install docker-compose
+brew install git
+brew install gnupg
+brew install mkcert
+brew install neovim
+brew install newman
 brew install nvm
-brew install bat
+brew install php
+brew install pinentry-mac
 brew install ripgrep
+brew install yarn
 
 #==============================================================================#
 # Install Rust
