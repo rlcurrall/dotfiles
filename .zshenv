@@ -12,6 +12,12 @@ else
   export EDITOR='mvim'
 fi
 
+# sbin
+if [ -d "/usr/local/sbin" ]; then
+    export PATH="/usr/local/sbin:$PATH";
+fi
+
+# Custom Scripts
 USER_SCRIPTS="$HOME/.bin";
 if [ -d $USER_SCRIPTS ]; then
   export PATH="$USER_SCRIPTS:$PATH";
