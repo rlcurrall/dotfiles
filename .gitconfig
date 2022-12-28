@@ -66,3 +66,9 @@
 # 	defaultBranch = main
 [gpg]
 	program = gpg
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[init]
+	defaultBranch = main
