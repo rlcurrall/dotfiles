@@ -1,0 +1,38 @@
+[user]
+	name = Robb Currall
+	email = rlcurrall@gmail.com
+
+[core]
+	editor = nvim
+	pager = less -X -F
+	excludesfile = ~/.global.gitignore
+	autocrlf = input
+
+[color]
+	ui = auto
+	interactive = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red
+	new = green
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[pull]
+	rebase = true
+
+[fetch]
+	prune = true
+
+[init]
+	defaultBranch = main

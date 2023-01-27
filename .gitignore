@@ -1,0 +1,13 @@
+# Ignore everything in this directory
+*
+
+# Except these files
+!.install
+!.install/*
+!.gitconfig
+!.gitignore
+!.global.gitignore
+!.vimrc
+!.zprofile
+!.zshenv
+!.zshrc
