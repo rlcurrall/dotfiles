@@ -1,7 +1,7 @@
 [user]
 	name = Robb Currall
-	email = robb@hipecommerce.com
-	signingkey = 12405B4513213DB0
+	email = rlcurrall@gmail.com
+	signingkey = 88BB0F723B24FADD
 
 [core]
 	editor = vim
@@ -65,7 +65,7 @@
 # [init]
 # 	defaultBranch = main
 [gpg]
-	program = gpg
+	program = gpg2
 [pull]
 	rebase = true
 [fetch]

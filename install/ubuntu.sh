@@ -1,23 +1,5 @@
 #!/bin/bash
 
-DOTFILES="$HOME/.dotfiles"
-installLocation="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && cd .. && pwd)"
-
-if [ ! "$DOTFILES" = "$installLocation" ]; then
-  printf "\e[0;31mERROR: Dotfiles not installed in the correct directory.
-    Expected: %s
-    Found in: %s\e[m\n" "$DOTFILES" "$installLocation"
-  return 1
-fi
-
-#==============================================================================#
-# Create local bin directory
-#==============================================================================#
-if [ -d "$HOME/.bin" ]; then
-  rm -rf "$HOME/.bin"
-fi
-mkdir "$HOME/.bin"
-
 #==============================================================================#
 # Install min required apt packages
 #==============================================================================#
@@ -27,38 +9,6 @@ sudo apt install -y \
   fonts-firacode \
   jq \
   xclip
-
-#==============================================================================#
-# Install Gnome applications
-#==============================================================================#
-sudo apt install -y \
-  celluloid \
-  gnome-calculator \
-  gnome-calendar \
-  gnome-gmail \
-  gnome-maps \
-  gnome-music \
-  gnome-photos \
-  gnome-weather
-
-#==============================================================================#
-# Install Desktop Applications
-#==============================================================================#
-sudo snap install typora
-sudo snap install gimp
-sudo snap install spotify
-sudo snap install chromium
-sudo snap install --classic phpstorm
-
-#==============================================================================#
-# Customize Desktop Files
-#==============================================================================#
-sudo ln -s "$DOTFILES/assets/gmail_icon.png" /usr/share/pixmaps/gmail_icon.png
-ln -s "$DOTFILES/ubuntu/gnome-gmail.desktop" "$HOME/.local/share/applications/gnome-gmail.desktop"
-
-ln -s "$DOTFILES/ubuntu/nvim.desktop" "$HOME/.local/share/applications/nvim.desktop"
-ln -s "$DOTFILES/ubuntu/vim.desktop" "$HOME/.local/share/applications/vim.desktop"
-ln -s "$DOTFILES/ubuntu/mpv.desktop" "$HOME/.local/share/applications/mpv.desktop"
 
 #==============================================================================#
 # Install Oh My Zsh
@@ -93,25 +43,6 @@ rm -f "$HOME/.gitignore"
 ln -s "$DOTFILES/.gitignore" "$HOME/.gitignore"
 
 #==============================================================================#
-# Install PHP & Extensions
-#==============================================================================#
-sudo apt install -y php \
-  php-mbstring \
-  php-dom
-
-# Install Composer
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-
-# Install Composer Global Packages
-"$DOTFILES"/composer.phar global require tightenco/takeout
-
-# Move to local bin folder
-mv "$DOTFILES/composer.phar" "$HOME/.bin/composer"
-
-#==============================================================================#
 # Install NeoVim
 #==============================================================================#
 sudo apt install -y neovim
@@ -133,47 +64,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # Install plugins
 nvim +PlugInstall +qall
-
-#==============================================================================#
-# install_docker
-#==============================================================================#
-sudo apt install -y \
-  docker \
-  docker-compose
-
-# Create Docker group & add user to it
-sudo groupadd docker
-sudo usermod -aG docker "$USER"
-
-# Enable Docker Daemon
-sudo systemctl enable docker
-
-#==============================================================================#
-# install_fusuma
-#==============================================================================#
-sudo apt install -y \
-  libinput-tools \
-  ruby \
-  xdotool
-
-# Add current user to input group
-sudo gpasswd -a "$USER" input
-
-# Install Fusuma
-sudo gem install fusuma
-
-# Fusuma Config
-if [ -d "$HOME/.config/fusuma" ]; then
-  rm -rf "$HOME/.config/fusuma"
-fi
-mkdir "$HOME/.config/fusuma"
-ln -s "$DOTFILES/fusuma.yml" "$HOME/.config/fusuma/config.yml"
-
-# Set Fusuma to start on boot
-if [ ! -d "$HOME/.config/autostart" ]; then
-  mkdir "$HOME/.config/autostart"
-fi
-ln -s "$DOTFILES/ubuntu/fusuma.desktop" "$HOME/.config/autostart/fusuma.desktop"
 
 #==============================================================================#
 # install_node
@@ -202,3 +92,4 @@ cargo install ripgrep
 # install_deno
 #==============================================================================#
 curl -fsSL https://deno.land/x/install/install.sh | bash
+
